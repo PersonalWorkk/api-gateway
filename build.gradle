@@ -23,7 +23,7 @@ dependencies {
     implementation "org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j"
 	implementation 'com.auth0:java-jwt:3.19.1'
 	implementation 'com.google.guava:guava:31.1-jre'
-	implementation group: 'io.netty', name: 'netty-all'
+	implementation group: 'io.netty', name: 'netty-all', version: '4.1.77.Final'
 	implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

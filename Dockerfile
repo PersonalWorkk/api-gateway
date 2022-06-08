@@ -10,8 +10,6 @@ COPY gradle/ gradle
 
 COPY gradlew build.gradle settings.gradle ./
 
-RUN ./gradlew clean
-
 COPY src ./src
 RUN export ENV=prod
 

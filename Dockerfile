@@ -6,13 +6,13 @@ RUN apk update && apk add bash
 
 WORKDIR /app
 
-
 COPY gradle/ gradle
 
 COPY gradlew build.gradle settings.gradle ./
 
 COPY src ./src
 RUN export ENV=prod
+
 RUN ./gradlew assemble
 
 

@@ -6,6 +6,8 @@ RUN apk update && apk add bash
 
 WORKDIR /app
 
+RUN ./gradlew clean
+RUN ./gradlew build
 
 COPY gradle/ gradle
 
@@ -13,7 +15,6 @@ COPY gradlew build.gradle settings.gradle ./
 
 COPY src ./src
 RUN export ENV=prod
-RUN ./gradlew clean
 
 RUN ./gradlew assemble
 

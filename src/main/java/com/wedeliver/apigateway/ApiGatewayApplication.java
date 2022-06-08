@@ -27,9 +27,8 @@ public class ApiGatewayApplication {
 			.route(routeSpec ->
 				routeSpec.path("/api/auth/**")
 					.filters(f -> f.filter(filter))
-					.uri("http://localhost:8081/")
+					.uri("http://localhost:8080/")
 			)
-			// change uris for production
 			.build();
     }
 

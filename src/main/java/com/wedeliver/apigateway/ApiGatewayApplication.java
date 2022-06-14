@@ -24,9 +24,8 @@ public class ApiGatewayApplication {
         return builder.routes()
 			// Authentication route
             // Calls the service-account endpoints
-			
 			.route(routeSpec ->
-				routeSpec.path("/api/auth/**")
+				routeSpec.path("/api/auth/register")
 					.filters(f -> f.filter(filter))
 					.uri("http://localhost:8081/")
 			)

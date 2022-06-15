@@ -29,6 +29,11 @@ public class ApiGatewayApplication {
 					.filters(f -> f.filter(filter))
 					.uri("http://serviceaccount-service:81")
 			)
+			.route(routeSpec ->
+				routeSpec.path("/api/restaurants/**")
+					.filters(f -> f.filter(filter))
+					.uri("http://servicerestaurant-service:82")
+			)
 			.build();
     }
 

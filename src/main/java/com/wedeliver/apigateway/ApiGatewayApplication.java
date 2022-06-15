@@ -34,6 +34,7 @@ public class ApiGatewayApplication {
 					.filters(f -> f.filter(filter))
 					.uri("http://servicerestaurant-service:82")
 			)
+			
 			.build();
     }
 

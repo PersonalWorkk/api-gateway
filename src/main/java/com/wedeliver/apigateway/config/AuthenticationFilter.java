@@ -39,6 +39,8 @@ public class AuthenticationFilter implements GatewayFilter{
         add(new Request(HttpMethod.GET, Pattern.compile("\\/api\\/restaurants")));
         // get restaurant by ID
         add(new Request(HttpMethod.GET, Pattern.compile("\\/api\\/restaurants\\/[a-zA-Z0-9]+")));
+        // add items to restaurant
+        add(new Request(HttpMethod.PUT, Pattern.compile("\\/api\\/restaurants\\/[a-zA-Z0-9]+\\/items")));
     }};
 
     /**
@@ -51,7 +53,7 @@ public class AuthenticationFilter implements GatewayFilter{
         put(new Request(HttpMethod.POST, Pattern.compile("\\/api\\/restaurants")), ImmutableList.of("OWNER"));
         put(new Request(HttpMethod.DELETE,  Pattern.compile("\\/api\\/restaurants\\/[a-zA-Z0-9]+")), ImmutableList.of("OWNER"));
         // update restaurant items
-        put(new Request(HttpMethod.PUT,  Pattern.compile("\\/api\\/restaurants\\/[a-zA-Z0-9]+\\/items")), ImmutableList.of("OWNER"));
+        // put(new Request(HttpMethod.PUT,  Pattern.compile("\\/api\\/restaurants\\/[a-zA-Z0-9]+\\/items")), ImmutableList.of("OWNER"));
         // delete restaurant item by restaurant and item ids
         put(new Request(HttpMethod.DELETE,  Pattern.compile("\\/api\\/restaurants\\/[a-zA-Z0-9]+\\/items\\/[a-zA-Z0-9]+")), ImmutableList.of("OWNER"));
         // update restaurant item by item id
